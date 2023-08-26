@@ -1,6 +1,11 @@
 let campoUsuario = document.getElementById("usuario")
 let campoPassword = document.getElementById("password")
 const mostrarMensaje = document.getElementById("mensaje")
+
+let usuarios = []
+let passwords = []
+
+
 function registro(){
 
 
@@ -9,6 +14,10 @@ function registro(){
     }else{
 
         BorrarMensaje()
+
+        usuarios.push(campoUsuario.value)
+        passwords.push(campoPassword.value)
+
 
         const usuario = campoUsuario.value
         const mensaje = document.createElement("p")
@@ -25,17 +34,23 @@ function registro(){
 function login(){
     if(campoPassword.value == "" || campoUsuario.value == ""){
         alert("Error!")
-    }else{
+    }   else if(usuarios.includes(campoUsuario.value, 0) && passwords.includes(campoPassword.value, 0)){
+        BorrarMensaje()
 
-    BorrarMensaje()
-
-    const usuario = campoUsuario.value
-    const mensaje = document.createElement("p")
-
-    mensaje.innerText = "Login correcto! Usuario: " + usuario
+        const usuario = campoUsuario.value
+        const mensaje = document.createElement("p")
+    
+        mensaje.innerText = "Login correcto! Usuario: " + usuario
+        
+    
+        mostrarMensaje.append(mensaje)
+        BorrarCampos()
     
 
-    mostrarMensaje.append(mensaje)
+    } else
+    {
+    alert("Error en el usuario o contraseña")
+    BorrarMensaje()
     BorrarCampos()
 
 }
