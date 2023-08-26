@@ -1,14 +1,55 @@
-var campoTexto = document.getElementById("campo");
+let campoUsuario = document.getElementById("usuario")
+let campoPassword = document.getElementById("password")
+const mostrarMensaje = document.getElementById("mensaje")
+function registro(){
 
 
-function mostrarAlerta(){
+    if(campoPassword.value == "" || campoUsuario.value == ""){
+        alert("Error!")
+    }else{
 
-    alert(campoTexto.value);
+        BorrarMensaje()
+
+        const usuario = campoUsuario.value
+        const mensaje = document.createElement("p")
+    
+        mensaje.innerText = "Te has registrado correctamente! Usuario: " + usuario
+        
+    
+        mostrarMensaje.append(mensaje) 
+
+        BorrarCampos()
+
+    }
+} 
+function login(){
+    if(campoPassword.value == "" || campoUsuario.value == ""){
+        alert("Error!")
+    }else{
+
+    BorrarMensaje()
+
+    const usuario = campoUsuario.value
+    const mensaje = document.createElement("p")
+
+    mensaje.innerText = "Login correcto! Usuario: " + usuario
+    
+
+    mostrarMensaje.append(mensaje)
+    BorrarCampos()
+
+}
+}
+
+function BorrarMensaje(){
+
+    mensaje.innerText = ""
 
 }
 
-function limpiarTexto(){
+function BorrarCampos(){
 
-    campoTexto.value = "";
+    campoPassword.value = ""
+    campoUsuario.value = ""
 
 }
