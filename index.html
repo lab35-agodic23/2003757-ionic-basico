@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="styles.css"> 
-    <title>Practica 3</title>
+    <title>Presupuesto</title>
 </head>
 <body>
-    <section>
-        <div class="container"> 
-            <label for="Usuario" class="textoNormal">Usuario:</label> <input type="text" id="usuario" class="input">
-        </div>
-        <div class="container"> 
-            <label for="Password" class="textoNormal">Password:</label> <input type="password" id="password" class="input">
-        </div>
-        <div><button class="boton" onclick="login()">Login</button></div>
-        <div><button class="boton" onclick="registro()">Registrarse</button></div>
-    </section>
-    <section>
-        <div id="mensaje"></div>
-    </section>
+    <ion-content class="ion-padding">
+        <h1>Gastos</h1>
+        <ion-list>
+            <ion-item>
+                <ion-input label="Tipo de gasto" placeholder="Ponga su tipo de gasto" id="tipoGasto"></ion-input>
+            </ion-item>
+            <ion-item>    
+                <ion-input label="Monto" placeholder="Ingrese el monto" id="monto"></ion-input>
+            </ion-item>
+            <ion-button shape="round" onclick="guardarGastos()">Aceptar</ion-button>
+        </ion-list>
+      </ion-content>
+      <ion-footer>
+        <ion-toolbar>
+          <ion-title>Pie de pagina</ion-title>
+        </ion-toolbar>
+      </ion-footer>
 <script src="script.js"> </script>
 </body>
 </html>

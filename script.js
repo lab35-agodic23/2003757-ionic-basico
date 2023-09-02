@@ -1,70 +1,20 @@
-let campoUsuario = document.getElementById("usuario")
-let campoPassword = document.getElementById("password")
-const mostrarMensaje = document.getElementById("mensaje")
+let gastos = []
 
-let usuarios = []
-let passwords = []
+tipoGasto = document.getElementById("tipoGasto")
+monto = document.getElementById("monto")
 
+function guardarGastos(){
 
-function registro(){
-
-
-    if(campoPassword.value == "" || campoUsuario.value == ""){
-        alert("Error!")
-    }else{
-
-        BorrarMensaje()
-
-        usuarios.push(campoUsuario.value)
-        passwords.push(campoPassword.value)
-
-
-        const usuario = campoUsuario.value
-        const mensaje = document.createElement("p")
-    
-        mensaje.innerText = "Te has registrado correctamente! Usuario: " + usuario
-        
-    
-        mostrarMensaje.append(mensaje) 
-
-        BorrarCampos()
-
-    }
-} 
-function login(){
-    if(campoPassword.value == "" || campoUsuario.value == ""){
-        alert("Error!")
-    }   else if(usuarios.includes(campoUsuario.value, 0) && passwords.includes(campoPassword.value, 0)){
-        BorrarMensaje()
-
-        const usuario = campoUsuario.value
-        const mensaje = document.createElement("p")
-    
-        mensaje.innerText = "Login correcto! Usuario: " + usuario
-        
-    
-        mostrarMensaje.append(mensaje)
-        BorrarCampos()
-    
-
-    } else
-    {
-    alert("Error en el usuario o contraseña")
-    BorrarMensaje()
-    BorrarCampos()
-
-}
-}
-
-function BorrarMensaje(){
-
-    mensaje.innerText = ""
+    gasto = tipoGasto.value + ":$ " + monto.value
+    gastos.push(gasto)
+    console.log(gastos) 
+    eliminarCampos()
 
 }
 
-function BorrarCampos(){
+function eliminarCampos(){
 
-    campoPassword.value = ""
-    campoUsuario.value = ""
+    monto.value = ""
+    tipoGasto.value =  ""
 
 }
