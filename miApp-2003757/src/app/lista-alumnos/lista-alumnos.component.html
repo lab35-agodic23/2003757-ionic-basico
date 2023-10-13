@@ -10,7 +10,8 @@
 
     <ion-item-options side="end">
       <ion-item-option>Favorite</ion-item-option>
-      <ion-item-option color="danger">Delete</ion-item-option>
+      <ion-item-option color="danger" id="open-action-sheet{{alumno}}">Eliminar</ion-item-option>
+      <ion-action-sheet trigger="open-action-sheet{{alumno}}" header="Actions" [buttons]="actionSheetButtons"></ion-action-sheet>
     </ion-item-options>
   </ion-item-sliding>
 </ion-list>
