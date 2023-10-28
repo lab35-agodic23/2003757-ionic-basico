@@ -1,17 +1,31 @@
-<ion-list *ngFor="let alumno of alumnos">
-  <ion-item-sliding>
-    <ion-item-options side="start">
-      <ion-item-option color="success">Archive</ion-item-option>
-    </ion-item-options>
+<ion-grid fixed="true">
+  <form #templateForm="ngForm">
+    <ion-label>Nombre</ion-label>
+    <ion-input [(ngModel)]="nuevoAlumno.nombre" placeholder="Ingresa tu nombre" required name="nombre">
+    </ion-input>
 
-    <ion-item>
-      <ion-label>{{alumno}}</ion-label>
-    </ion-item>
+    <ion-label></ion-label>
+    <ion-button type="submit" (click)="agregarAlumnos()">Aceptar</ion-button>
+  </form>
+    
 
-    <ion-item-options side="end">
-      <ion-item-option>Favorite</ion-item-option>
-      <ion-item-option color="danger" id="open-action-sheet{{alumno}}">Eliminar</ion-item-option>
-      <ion-action-sheet trigger="open-action-sheet{{alumno}}" header="Actions" [buttons]="actionSheetButtons"></ion-action-sheet>
-    </ion-item-options>
-  </ion-item-sliding>
+  <ion-list *ngFor="let alumno of alumnos">
+    <ion-item-sliding>
+      <ion-item-options side="start">
+        <ion-item-option color="success">Archive</ion-item-option>
+      </ion-item-options>
+  
+      <ion-item>
+        <ion-label>{{alumno.nombre}}</ion-label>
+      </ion-item>
+  
+      <ion-item-options side="end">
+        <ion-item-option>Favorite</ion-item-option>
+        <ion-item-option color="danger" id="open-action-sheet{{alumno}}">Eliminar</ion-item-option>
+        <ion-action-sheet trigger="open-action-sheet{{alumno}}" header="Actions" [buttons]="actionSheetButtons"></ion-action-sheet>
+      </ion-item-options>
+    </ion-item-sliding>
 </ion-list>
+</ion-grid>
+
+

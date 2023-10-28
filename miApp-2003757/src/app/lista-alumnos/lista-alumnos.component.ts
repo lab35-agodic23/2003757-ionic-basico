@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { alumno } from '../alumno.model';
 
 @Component({
   selector: 'app-lista-alumnos',
@@ -11,7 +12,7 @@ export class ListaAlumnosComponent  implements OnInit {
 
   ngOnInit() {}
 
-  alumnos : any = ["Carlos", "Ximena", "Alberto", "Eduardo", "Baraba", "Georgina", "Kevin"];
+  alumnos : any[] = [];
 
   public actionSheetButtons = [
     {
@@ -29,5 +30,15 @@ export class ListaAlumnosComponent  implements OnInit {
       },
     },
   ];
+  
+  nuevoAlumno: alumno = {
+    nombre: '',
+    presente: false
+  }
+
+  agregarAlumnos(){
+    this.alumnos.push(this.nuevoAlumno);
+    console.log(this.alumnos)
+  }
 
 }
