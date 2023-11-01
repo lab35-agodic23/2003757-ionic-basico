@@ -1,8 +1,4 @@
 export interface alumno {
-    
-nombre: string;
-presente: boolean;
-
-
-
+    nombre: string;
+    presente: boolean;
 }

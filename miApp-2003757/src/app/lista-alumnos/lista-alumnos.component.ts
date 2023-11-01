@@ -12,7 +12,7 @@ export class ListaAlumnosComponent  implements OnInit {
 
   ngOnInit() {}
 
-  alumnos : any[] = [];
+  alumnos : alumno[] = [];
 
   public actionSheetButtons = [
     {
@@ -39,6 +39,11 @@ export class ListaAlumnosComponent  implements OnInit {
   agregarAlumnos(){
     this.alumnos.push(this.nuevoAlumno);
     console.log(this.alumnos)
+    
+    this.nuevoAlumno={
+      nombre: '',
+      presente: false,
+    }
   }
 
 }
